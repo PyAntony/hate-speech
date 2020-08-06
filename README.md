@@ -29,7 +29,7 @@ Even with these guidelines there was multiple differences among annotators. Some
 (some are mentioned in the paper): 
 
 - can a factual statement constitute an attack?
-- can a single individual constitute an entire group if the offense can be generalize?
+- can a single individual constitute an entire group if the offense can be generalized?
 - when does a trait becomes associated with an entire group's identity? Couldn't a trait be mentioned only in reference 
 of a single individual or perhaps a subgroup?  
 
