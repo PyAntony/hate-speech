@@ -78,7 +78,7 @@ model |	epoch |	eval_train_loss |	eval_loss |	eval_accHate |	eval_accNoHate | ev
 We can notice the evaluation loss for 2 epochs is the lowest (this is the most relevant metric). For the second part 
 of the notebook I used the pre-trained model (without tuning) to extract embeddings for the entire sentences and pass 
 them as the input to the default head classifier (a 2 layer NN). I could have used any other classifier but I chose 
-the same default head to make the comparison with the fine-tuning approach fair. There are multiple strategies to select 
+the same default head to make a fair comparison with the fine-tuning approach. There are multiple strategies to select 
 embeddings; combinations I tried included:  
 * CLS: embedding for [CLS] token.
 * LAST_MEAN: mean of all word embeddings from last layer.
