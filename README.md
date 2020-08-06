@@ -61,7 +61,7 @@ race | 24.915494
 scum | 24.367472
 
 For more data exploration go to *notebooks/EDA.ipynb* (data is downloaded automatically in the notebook 
-so you don't need to downloaded yourself).
+so you don't need to download it yourself).
 
 ### Bert Model
 
