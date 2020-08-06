@@ -88,7 +88,7 @@ embeddings; combinations I tried included:
 
 It should be noted that, although the [CLS] token is used for a general representation of the sentence for 
 classification problems, this representation is meaningless **unless** fine-tuning occurs, otherwise the model wouldn't 
-be motivated to to fully funnel the sentence meaning in that single vector. The [CLS] by itself is, therefore, a weak 
+be motivated to fully funnel the sentence meaning in that single vector. The [CLS] token by itself is, therefore, a weak 
 embedding; it would be better to test some other aggregations of the other vectors found in the hidden states. You can 
 find more information about this topic in the ***bert-as-service*** library documentation 
 (https://github.com/hanxiao/bert-as-service#speech_balloon-faq and 
