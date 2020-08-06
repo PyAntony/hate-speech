@@ -109,6 +109,70 @@ We can see the best strategy by eval_loss is LAST2_MEAN. This is also the defaul
 
 ### Prediction API
 
+The fine-tuned model has a small API for prediction (*nlp_bert/nlp-api.py*). To get predictions you send a POST request 
+to endpoint:
+```bash
+model/predict
+# to get embeddings
+model/predict?embeddings=true
+```
+You can pass up to 5 sentences at a time (you can send more but the API will take only the first 5). POST request 
+example:
+
+```bash
+curl -X POST "http://127.0.0.1:8000/model/predict?embeddings=true" \
+    -H  "accept: application/json" \
+    -H  "Content-Type: application/json" \
+    -d "{\"text\":
+            [\"Don't bother with black culture , it 's not worth the effort .\",
+             \"Good going libtards , you ruined Rhodesia .\", 
+             \"I would n't marry a asian even after cirurgy .\"]
+        }"
+```
+
+Predictions at index 0 represent the ***noHAte*** class; index 1 represent ***hate*** class. The embeddings come from 
+the [CLS] token. Output example:
+
+```bash
+{
+  "predictions": [
+    [
+      0.44551581144332886,
+      0.5544842481613159
+    ],
+    [
+      0.44643911719322205,
+      0.5535609126091003
+    ],
+    [
+      0.47761672735214233,
+      0.5223833322525024
+    ]
+  ],
+  "embeddings": [
+      [
+        -0.0784786194562912,
+        0.15456458926200867,
+        -0.2955276072025299,
+        -0.07512544095516205,
+        -0.29915621876716614,
+        ...
+  ]
+}
+```
+Project was built with *poetry* (https://python-poetry.org/), so it is recommended to get *poetry* first to install all 
+the dependencies. After *poetry* installation you can simply clone this repo, navigate to the root directory, and run: 
+
+```bash
+# install dependencies
+poetry install
+
+# running the API
+cd nlp_bert
+uvicorn nlp-api:app
+```
+
+The fine-tuned model will be downloaded automatically if its directory is not found.
 
 
 
